@@ -1,0 +1,11 @@
+.:
+total 4
+drw-r--r--. 2 s2h00ty wheel 22 Dec  3 20:52 dir
+-r--r-----. 1 root    wheel  9 Dec  3 20:51 file
+-rw-------. 1 s2h00ty wheel  0 Dec  3 21:00 file1
+-rw-rw-rw-. 1 s2h00ty wheel  0 Dec  3 21:02 file2
+
+./dir:
+ls: cannot access './dir/new_file': Permission denied
+total 0
+-????????? ? ? ? ?            ? new_file
