@@ -1,0 +1,134 @@
+1  10/18/2022 20:17  whoami
+    2  10/18/2022 20:17  whoaim
+    3  10/18/2022 20:17  whoami
+    4  10/18/2022 20:18  echo "Hello World"
+    5  10/18/2022 20:18  date
+    6  10/18/2022 20:18  cal
+    7  10/18/2022 20:18  man cal
+    8  10/18/2022 20:19  cal -3
+    9  10/18/2022 20:19  history
+   10  10/18/2022 20:20  clear
+   11  10/18/2022 20:20  sdfs
+   12  10/18/2022 20:20  sdf
+   13  10/18/2022 20:20  pwd
+   14  10/18/2022 20:21  cd /
+   15  10/18/2022 20:21  cd ..
+   16  10/18/2022 20:21  pwd
+   17  10/18/2022 20:21  ls
+   18  10/18/2022 20:21  ls var
+   19  10/18/2022 20:22  cd ~
+   20  10/18/2022 20:22  ..
+   21  10/18/2022 20:22  pwd
+   22  10/18/2022 20:23  ls
+   23  10/18/2022 20:23  l
+   24  10/18/2022 20:23  cd
+   25  10/18/2022 20:23  mkdir fruits
+   26  10/18/2022 20:23  /
+   27  10/18/2022 20:24  mkdir ~/animals
+   28  10/18/2022 20:26  touch /tmp/temp
+   29  10/18/2022 20:26  cd ~/fruits
+   30  10/18/2022 20:27  touch apple bannana pineaple lion
+   31  10/18/2022 20:28  ls
+   32  10/18/2022 20:30  touch  ../animals/cat.txt ../animals/dog.txt ../animals/elephant.txt
+   33  10/18/2022 20:30  l ../animals
+   34  10/18/2022 20:33  l
+   35  10/18/2022 20:34  ls b*
+   36  10/18/2022 20:34  ls *a
+   37  10/18/2022 20:35  ls [bi]*
+   38  10/18/2022 20:35  ls b* i*
+   39  10/18/2022 20:36  cp /etc/passwd ~
+   40  10/18/2022 20:36  ls
+   41  10/18/2022 20:36  cd
+   42  10/18/2022 20:36  ls
+   43  10/18/2022 20:38  cat /etc/issue
+   44  10/18/2022 20:39  cp /etc/issue fruits/apple
+   45  10/18/2022 20:39  cat fruits/apple
+   46  10/18/2022 20:40  mv fruits/lion animals 
+   47  10/18/2022 20:40  ls animals
+   48  10/18/2022 20:41  mv fruits/pineaple fruits/pineapple
+   49  10/18/2022 20:41  ls fruits
+   50  10/18/2022 20:41  man wc
+   51  10/18/2022 20:42  wc -l passwd
+   52  10/18/2022 20:43  ln -s /etc/passwd passwd_link
+   53  10/18/2022 20:43  ls
+   54  10/18/2022 20:43  ln .bash_history history_hard
+   55  10/18/2022 20:43  la
+   56  10/18/2022 20:44  ln .zsh_history history_hard
+   57  10/18/2022 20:44  l
+   58  10/18/2022 20:48  ln .bash_history history_hard2
+   59  10/18/2022 20:48  ln .zsh_history history_hard2
+   60  10/18/2022 20:48  l
+   61  10/18/2022 20:49  rm history_hard2
+   62  10/18/2022 20:49  rm fruits/apple
+   63  10/18/2022 20:50  mkdir rmme
+   64  10/18/2022 20:50  rmdir rmme
+   65  10/18/2022 20:50  rmdir fruits
+   66  10/18/2022 20:51  rm -fr fruits
+   67  10/18/2022 20:51  cat /etc/passwd /var/log/boot.log
+   68  10/18/2022 20:53  sudo cat /etc/passwd /var/log/boot.log
+   69  10/18/2022 20:53  cp /etc/init.d/ ~
+   70  10/18/2022 20:53  cp -r /etc/init.d/ ~
+   71  10/18/2022 20:53  ls
+   72  10/18/2022 20:54  rm -r init.d
+   73  10/18/2022 20:58  man tail
+   74  10/18/2022 20:59  man sort
+   75  10/18/2022 21:00  man cut
+   76  10/18/2022 21:00  cut -d: -f1 /etc/passwd | sort
+   77  10/18/2022 21:01  cut -d: -f1,3,4 /etc/passwd | column -ts: | less
+   78  10/18/2022 21:02  ls /etc/passwd
+   79  10/18/2022 21:02  cat /etc/passwd
+   80  10/18/2022 21:03  man column
+   81  10/18/2022 21:08  cut -d: -f1,3 /etc/passwd | column -ts: | less
+   82  10/18/2022 21:09  grep :/bin/bash /etc/passwd | wc -l
+   83  10/18/2022 21:09  man grep
+   84  10/18/2022 21:10  grep :/bin/zsh /etc/passwd | wc -l
+   85  10/18/2022 21:10  grep :/usr/bin/zsh /etc/passwd | wc -l
+   86  10/18/2022 21:11  man sort
+   87  10/18/2022 21:12  grep :/bin/bash /etc/passwd | cut -d: -f1 | sort -r
+   88  10/18/2022 21:12  grep :/usr/bin/zsh /etc/passwd | cut -d: -f1 | sort -r
+   89  10/18/2022 21:14  man rpm
+   90  10/18/2022 21:15  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k2,2 | head -25
+   91  10/18/2022 21:15  rpm -ql man-db
+   92  10/18/2022 21:16  rpm -ql man-db | xargs -l du 
+   93  10/18/2022 21:16  rpm -ql man-db | xargs -l du 2> /dev/null  | sort -n
+   94  10/18/2022 21:17  top
+   95  10/18/2022 21:17  top -b
+   96  10/18/2022 21:18  top -b -n1
+   97  10/18/2022 21:18  man top
+   98  10/18/2022 21:18  man sort
+   99  10/18/2022 21:19  top -b -n1 | sort -k 12
+  100  10/18/2022 21:20  top -b -n1 | tail -n+8
+  101  10/18/2022 21:20  man cut
+  102  10/18/2022 21:23  man tr
+  103  10/18/2022 21:24  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' '\t' | cut -f11,5
+  104  10/18/2022 21:24  top -b -n1 | tail -n+8 | cut -c7-  | tr -s 't' '\t' | cut -f11,5
+  105  10/18/2022 21:24  top -b -n1 | tail -n+8 | cut -c7-  | tr -s '  ' '\t' | cut -f11,5
+  106  10/18/2022 21:24  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' 't' | cut -f11,5
+  107  10/18/2022 21:24  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' 'A' | cut -f11,5
+  108  10/18/2022 21:24  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' '\t' | cut -f11,5
+  109  10/18/2022 21:25  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' '\t'
+  110  10/18/2022 21:25  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' '\t' | cut -f12,5
+  111  10/18/2022 21:25  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' '\t' | cut -f11,5
+  112  10/18/2022 21:25  top -b -n1 | tail -n+8 | cut -c7-  | tr -s ' ' '\t' | cut -f12,5
+  113  10/18/2022 21:29  cat /etc/passwd | sort -k1 | tr ":" " "
+  114  10/18/2022 21:31  cut -d: -f1,7 /etc/passwd | sort -k1 |column -ts:
+  115  10/18/2022 21:32  cd /usr/share/doc/git-*
+  116  10/18/2022 21:32  cd /usr/share/doc/git
+  117  10/18/2022 21:32  ls
+  118  10/18/2022 21:33  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]' | sort | uniq -c | sort -rn | head -5
+  119  10/18/2022 21:33  cat user-manual.txt | tr -cs '[:alpha:]' '\n' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -rn | head -5
+  120  10/18/2022 21:33  tr '[:lower:]' '[:upper:]' < user-manual.txt |  tr -d '[:punct:] \n\t' | fold -w1 | sort | uniq -c | sort -rn | head -5
+  121  10/18/2022 21:34  tr -cs '[:alpha:]' '\n' < user-manual.txt | less | grep -E ........ | sort | uniq -c | sort -rn | head
+  122  10/18/2022 21:34  ping ya.ru
+  123  10/18/2022 21:34  curl wttr.in
+  124  10/18/2022 21:35  hostname -I
+  125  10/18/2022 21:35  curl ifconfig.me
+  126  10/18/2022 21:36  cd
+  127  10/18/2022 21:36  wget https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README-ru.md
+  128  10/18/2022 21:37  less README-ru.md
+  129  10/18/2022 21:38  sudo id
+  130  10/18/2022 21:39  id
+  131  10/18/2022 21:39  sudo less /var/log/messages
+  132  10/18/2022 21:39  less /var/log/messages
+  133  10/18/2022 21:40  su 
+  134  10/18/2022 21:40  su root
