@@ -86,4 +86,3 @@
 86  sudo ausearch -m avc -ts recent
 87  seinfo | grep -E '(dontaudit|allow)'
 88  man audit2allow
-89  history > lab12_history
