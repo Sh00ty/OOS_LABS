@@ -1,0 +1,15 @@
+ 1  auditctl -D
+ 2  auditctl -w /home/s2h00ty/lab11/file1 -p war -k s2h00ty_file1
+ 3  auditctl -l
+ 4  aureport --file -ts today -i --summary
+ 5  aureport --file -ts today -i --summary
+ 6  aureport --file -ts recent
+ 7  ausearch -a 3231
+ 8  ausearch -a 3232
+ 9  ausearch -a 3233
+10  aureport
+11  aureport --auth -ts recent
+12  aureport --user -ts recent -i
+13  ausearch --uid 1001 -ts recent
+14  ausearch --uid 1000 -ts recent
+

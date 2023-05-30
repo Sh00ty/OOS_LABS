@@ -1,0 +1,28 @@
+   1  ldd /bin/login | grep pam
+   2  ls -l /lib64/libpam*
+   3  ls -l /lib64/security/
+   4  vim /etc/pam.d/system-auth
+   5  vim /etc/pam.d/su
+   6  su -c "hostname mephi"
+   7  vim /etc/pam.d/su
+   8  su
+   9  vim /etc/pam.d/su
+  10  sudo useradd -G wheel -p password -s /bin/bash user1
+  11  su user1
+  12  sudo passwd user1
+  13  su user1
+  14  vim /etc/pam.d/su
+  15  vim /etc/pam.d/login
+  16  cp /etc/pam.d/login ./logcopy
+  17  sudo cp ./logcopy /etc/pam.d/login
+  18  man pam_pwquality
+  19  vim /etc/security/pwquality.conf
+  20  vim /etc/pam.d/system-auth
+  21  sudo passwd s2h00ty
+  22  vim /etc/pam.d/system-auth
+  23  vim /etc/security/pwquality.conf
+  24  man pam_limits
+  25  vim /etc/security/limits.conf
+  26  su user1
+  27  vim /etc/security/limits.conf
+  28  history > history.txt

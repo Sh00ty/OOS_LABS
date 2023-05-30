@@ -1,0 +1,89 @@
+ 1  ldd /bin/ls | grep selinux
+ 2  ls -l /etc/selinux/
+ 3  ls -l /etc/selinux/targeted/
+ 4  id -Z
+ 5  ls -Z /etc/passwd /etc/group /etc/shadow
+ 6  ls -Z /etc/login.defs /etc/sudoers
+ 7  ls -Z /usr/bin/passwd
+ 8  ls -Z /usr/sbin/useradd
+ 9  getfattr -n security.selinux /etc/passwd
+10  ps Zaux
+11  ls /proc/$$/attr
+12  ps Z $(pgrep passwd)
+13  netstat -tnlpZ
+14  sestatus
+15  getenforce
+16  vi /etc/selinux/config
+17  reboot
+18  sestatus
+19  getenforce
+20  vi /etc/selinux/config
+21  reboot
+22  sestatus
+23  getenforce
+24  vi /etc/selinux/config
+25  reboot
+26  sestatus
+27  setenforce 1
+28  echo 1 > /sys/fs/selinux/enforce
+29  uname -a
+30  cat /usr/src/kernels/4.18.0-425.3.1.el8.x86_64/.config | grep SELINUX
+31  getsebool -a | grep httpd
+32  seinfo
+33  seinfo -cfile -x
+34  seinfo --class | grep file
+35  seinfo --class file -x
+36  seinfo --common file -x
+37  seinfo --class dir -x
+38  seinfo --class blk_file -x
+39  seinfo --class chr_file -x
+40  seinfo --class lnk_file -x
+41  seinfo --class fifo_file -x
+42  seinfo --class sock_file -x
+43  seinfo --class filesystem -x
+44  seinfo --common dir -x
+45  seinfo --common blk_file -x
+46  seinfo --common chr_file -x
+47  seinfo --common file -x
+48  seinfo --common lnk_file -x
+49  seinfo --common fifo_file -x
+50  seinfo --common sock_file -x
+51  seinfo --common filesystem -x
+52  seinfo | grep 'Policy Version'
+53  seinfo -c file -x
+54  seinfo -c dir -x
+55  seinfo --common file -x
+56  semanage
+57  grep 'httpd_.*_t' /etc/selinux/targeted/contexts/files/file_contexts
+58  semanage fcontext -l
+59  sudo semanage fcontext -l
+60  sudo semanage fcontext -l | grep /home/alexanox
+61  sudo semanage fcontext -l | grep /home
+62  touch /home/file
+63  sudo touch /home/file
+64  sudo semanage fcontext -l | grep file
+65  sudo semanage fcontext -l | less
+66  grep 'home' /etc/selinux/targeted/contexts/files/file_contexts
+67  grep 'home/file' /etc/selinux/targeted/contexts/files/file_contexts
+68  sudo semanage fcontext -l
+69  ls -lZ ./
+70  ls -lZ /home
+71  sudo cp /home/file /
+72  ls -lZ /
+73  man chcon
+74  chcon --reference=/file /home/file
+75  sudo chcon --reference=/file /home/file
+76  ls -lZ /home/file
+77  man semanage fcontext
+78  sesearch -T -s httpd_t -t var_log_t
+79  sesearch -T -s httpd_t -t tmp_t
+80  sesearch --allow --source passwd_t --target shadow_t --class file
+81  sesearch -A -s passwd_t -t passwd_exec_t -c file
+82  sesearch -A -s unconfined_t -t passwd_exec_t -c file
+83  sesearch -A -s unconfined_t -t passwd_t -c process
+84  sesearch --type_trans -s unconfined_t -t passwd_exec_t
+85  ausearch -m avc -ts recent
+86  sudo ausearch -m avc -ts recent
+87  seinfo | grep -E '(dontaudit|allow)'
+88  man audit2allow
+89  history > lab12_history

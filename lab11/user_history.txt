@@ -1,0 +1,4 @@
+1  id
+2  pwd
+3  touch file1
+4  echo 'Hello, world!' > file1 && cat file1 && chmod 600 file1
